@@ -4,8 +4,11 @@ import "./index.scss";
 import App from "./container/App/App";
 import reportWebVitals from "./reportWebVitals";
 import './config/i18n/config';
+import { SITE_NAME } from "./config/constant";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
+document.title = SITE_NAME;
+
 root.render(
   <React.StrictMode>
     <App />
