@@ -4,6 +4,7 @@ import LanguageDetector from "i18next-browser-languagedetector";
 import { DEFAULT_LANGUAGE } from "../constant";
 
 import fr from "./locales/fr.json";
+import en from "./locales/en.json";
 
 i18n
   .use(LanguageDetector)
@@ -11,6 +12,7 @@ i18n
   .init({
     resources: {
       fr,
+      en,
     },
     parseMissingKeyHandler(missing) {
       console.warn("MISSING TRANSLATION: ", missing);
@@ -25,6 +27,6 @@ i18n
     },
   });
 
-i18n.languages = ["fr"];
+i18n.languages = ["fr", "en"];
 
 export default i18n;

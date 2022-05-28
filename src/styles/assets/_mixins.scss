@@ -1,0 +1,15 @@
+@import 'variables';
+
+@mixin font-primary($weight: normal, $style: normal) {
+  font-family: $font--primary;
+  font-weight: $weight;
+  font-style: $style;
+}
+
+@mixin h1 {
+  @include font-primary();
+  line-height: $line-height--h1;
+}
+h1, .asH1 {
+  @include h1();
+}
