@@ -5,16 +5,17 @@ import {API_URL, SITE_NAME} from '../../config/constant';
 
 
 import { useTranslation } from "react-i18next";
-import { getEntities, getSingle } from "../../helpers/entity";
+import { getEntities } from "../../helpers/entity";
+import Navbar from "../Navbar/Navbar";
 
 function App() {
 
   getEntities('chalets?populate=*');
-  getSingle('about?populate=*');
 
   const { t } = useTranslation();
   return (
     <div className="App">
+      <Navbar />
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>{t("welcome")} to {SITE_NAME} at the url: {API_URL}</p>
