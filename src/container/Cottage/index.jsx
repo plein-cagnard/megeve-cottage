@@ -9,6 +9,7 @@ import './Style.scss';
 const Cottage = () => {
     const [cottage, setCottage] = useState({});
     const [carousel, setCarousel] = useState([]);
+    const [infoCategory, setInfoCategory] = useState(0);
     let params = useParams();
 
     useEffect(() => {
@@ -18,21 +19,71 @@ const Cottage = () => {
         });
     }, [])
     
-    console.log(cottage)
+    // console.log(cottage)
     return (
-        <div className="container">
-            <div className="header">
-                <h1>{cottage.title}</h1>
-                <div className="cover-image">
-                    <img src={BASE_URL + cottage.cover?.data.attributes.url} alt={cottage?.title} width="100%"/>
-                </div>
-                <div className="description">
-                    <p>
-                        {cottage.description}
-                    </p>
+        <>
+            <div className="cover-image">
+                <button className="back-button">
+                    <p>Retour</p>
+                </button>
+                <img src={BASE_URL + cottage.cover?.data.attributes.url} alt={cottage?.title} width="100%"/>
+            </div>
+            <div className="container">
+                <div className="content">
+                    <div className="title">
+                        <h1>{cottage.title}</h1>
+                        <span>Megeve - Centre</span>
+                    </div>
+                    <div className="description">
+                        <p>
+                            {cottage?.description}
+                        </p>
+                    </div>
                 </div>
 
-                <Carousel
+                <div className="categories-info">
+                    <div className="buttons">
+                        <button 
+                            className={infoCategory === 0 ? "selected" : ""}
+                            onClick={() => {setInfoCategory(0)}}
+                        >
+                            Informations
+                        </button>
+                        <button 
+                            className={infoCategory === 1 ? "selected" : ""}
+                            onClick={() => {setInfoCategory(1)}}
+                        >
+                            Services
+                        </button>
+                        <button 
+                            className={infoCategory === 2 ? "selected" : ""}
+                            onClick={() => {setInfoCategory(2)}}
+                        >
+                            Proche
+                        </button>
+                    </div>
+                    <div className="categories">
+                        {infoCategory === 0 && (
+                            <div className="info">
+                                test info
+                            </div>
+                        )}
+
+                        {infoCategory === 1 && (
+                            <div className="services">
+                                test services
+                            </div>
+                        )}
+
+                        {infoCategory === 2 && (
+                            <div className="nearby">
+                                test nearby
+                            </div>
+                        )}
+                    </div>
+                </div>
+            </div>
+            {/* <Carousel
                     showThumbs={false}
                     showIndicators={false}
                     showStatus={false}
@@ -47,10 +98,8 @@ const Cottage = () => {
                             </div>
                         )
                     })}
-                </Carousel>
-            </div>
-
-        </div>
+            </Carousel> */}
+        </>
     )
 }
 

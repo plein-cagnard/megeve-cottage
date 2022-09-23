@@ -4,7 +4,7 @@
 //                                                                                                                    //
 //--------------------------------------------------------------------------------------------------------------------//
 
-$font--primary: '';
+$font--primary: 'Helvetica';
 $font--secondary: '';
 $font--error: '';
 
@@ -19,10 +19,12 @@ $line-height--h1: 1px;
 //                                                                                                                    //
 //--------------------------------------------------------------------------------------------------------------------//
 
-$color--primary: #ffffff;
-$color--secondary: #ffffff;
+$color--primary: #013125;
+$color--secondary: #45361E;
 
-$color--text: #ffffff;
+$color--text: #1E261F;
+$color--text-secondary: #5f6569;
+
 
 $color--error: #ffffff;
 $color--success: #ffffff;
