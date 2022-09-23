@@ -1,5 +1,6 @@
 import React, {useEffect, useState} from "react";
 import {getSingle} from "../../helpers/entity";
+import { Link } from "react-router-dom";
 import './Navbar.scss';
 
 const Navbar = () => {
@@ -16,7 +17,7 @@ const Navbar = () => {
       { navbarData.attributes && navbarData.attributes.fields.map((field) => {
         return (
           <li key={field.id}>
-            <a href={field.link}>{field.text}</a>
+            <Link to={field.link}>{field.text}</Link>
           </li>
         )
       })}

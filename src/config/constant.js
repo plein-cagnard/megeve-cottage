@@ -1,5 +1,7 @@
 export const DEFAULT_LANGUAGE = process.env.REACT_APP_DEFAULT_LANGUAGE || "fr";
 export const SITE_NAME = process.env.REACT_APP_SITE_NAME || "Plein Cagnard";
 
-export const API_URL = process.env.REACT_APP_API_URL || "http://localhost:1337/api/";
-export const API_TOKEN = process.env.REACT_APP_API_TOKEN || "d92f87c4a40c225bbf6911d653b4e51dc5cc7d39325edd07d45578cece5a1d6c1eea5c5d4914d056f74d495d0353d189a02263ed4aef46fa5dae5383a5da1933e806368f7c41b111aede3446cb966de55a728e5ce36bcab952340466897b65dbcc7a2bb8b755e27b1a7504f98b423919877081483aef9fb3c7c0373bca90912b"
+export const API_URL = process.env.REACT_APP_API_URL || "https://megeve-cottage.herokuapp.com/api/";
+export const BASE_URL = process.env.REACT_APP_API_URL || "https://megeve-cottage.herokuapp.com";
+
+export const API_TOKEN = process.env.REACT_APP_API_TOKEN || "08348fdf5f0b68627093e3b8daf3e50e9c6457ecdb3aaf2a5d9be0ef9f098331725285efdf68f468bf2d88e2691b2602503d96d2819c09703bb18f680be1c5967c8be6e235577437e64a12ce232e6d194a6d17820bec38b60a1b63ea7ed1ce4fb00d0becf0afb9a9f677e85772e20fd96ae3348961d953116d47735fa8763b51"
