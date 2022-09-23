@@ -26,7 +26,7 @@ const Cottage = () => {
                 <button className="back-button">
                     <p>Retour</p>
                 </button>
-                <img src={BASE_URL + cottage.cover?.data.attributes.url} alt={cottage?.title} width="100%"/>
+                <img src={BASE_URL + cottage.cover?.data?.attributes?.url} alt={cottage?.title} width="100%"/>
             </div>
             <div className="container">
                 <div className="content">
