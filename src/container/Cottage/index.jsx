@@ -19,7 +19,7 @@ const Cottage = () => {
         });
     }, [])
     
-    // console.log(cottage)
+    console.log(BASE_URL);
     return (
         <>
             <div className="cover-image">
