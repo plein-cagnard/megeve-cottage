@@ -3,6 +3,6 @@ import axios from 'axios';
 
 export default axios.create({
   baseURL: API_URL,
-  timeout: 1000,
+  timeout: 10000,
   headers: {Authorization: `Bearer ${API_TOKEN}`}
 });
