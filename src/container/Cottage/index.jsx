@@ -28,6 +28,7 @@ const Cottage = () => {
                     <p>Retour</p>
                 </button>
                 <Swiper
+                    lazy={true}
                     onSlideChange={() => console.log('slide change')}
                     onSwiper={(swiper) => console.log(swiper)}
                 >
