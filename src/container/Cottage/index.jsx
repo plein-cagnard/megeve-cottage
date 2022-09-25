@@ -35,14 +35,14 @@ const Cottage = () => {
                     <SwiperSlide
                         slot="container-start"
                     >
-                        <img src={BASE_URL + cottage.cover?.data?.attributes?.url} alt={cottage?.title}/>
+                        <img src={BASE_URL + cottage.cover?.data?.attributes?.url} alt={cottage?.title } className="swiper-lazy"/>
                     </SwiperSlide>
                     {carousel && carousel.map((image, key) => {
                         console.log(image);
                         return (
                             <SwiperSlide>
 
-                                <img key={image.id + key} src={BASE_URL + image?.attributes.url} alt={image?.attributes.name}/>
+                                <img key={image.id + key} src={BASE_URL + image?.attributes.url} alt={image?.attributes.name} className="swiper-lazy"/>
                             </SwiperSlide>
                         )
                     })}
