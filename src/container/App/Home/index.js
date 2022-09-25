@@ -6,11 +6,13 @@ const Home = () => {
   const { t } = useTranslation();
   
   return (
-    <header className="App-header">
-      <div className='Hero'>
-        <h1>Trouvez votre prochaine maison de vacances</h1>
-      </div>          
-    </header>
+    <>
+      <header className="App-header">
+        <div className='Hero'>
+          <h1>Trouvez votre prochaine maison de vacances</h1>
+        </div>          
+      </header>
+    </>
   )
 }
 

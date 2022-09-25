@@ -2,9 +2,10 @@ import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { getEntity } from "../../helpers/entity";
 import { BASE_URL } from "../../config/constant";
-import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
-import { Carousel } from 'react-responsive-carousel';
 import './Style.scss';
+
+import { Swiper, SwiperSlide } from 'swiper/react';
+import 'swiper/css';
 
 const Cottage = () => {
     const [cottage, setCottage] = useState({});
@@ -26,13 +27,31 @@ const Cottage = () => {
                 <button className="back-button">
                     <p>Retour</p>
                 </button>
-                <img src={BASE_URL + cottage.cover?.data?.attributes?.url} alt={cottage?.title} width="100%"/>
+                <Swiper
+                    onSlideChange={() => console.log('slide change')}
+                    onSwiper={(swiper) => console.log(swiper)}
+                >
+                    <SwiperSlide
+                        slot="container-start"
+                    >
+                        <img src={BASE_URL + cottage.cover?.data?.attributes?.url} alt={cottage?.title}/>
+                    </SwiperSlide>
+                    {carousel && carousel.map((image, key) => {
+                        console.log(image);
+                        return (
+                            <SwiperSlide>
+
+                                <img key={image.id + key} src={BASE_URL + image?.attributes.url} alt={image?.attributes.name}/>
+                            </SwiperSlide>
+                        )
+                    })}
+                </Swiper>
             </div>
             <div className="container">
                 <div className="content">
                     <div className="title">
                         <h1>{cottage.title}</h1>
-                        <span>Megeve - Centre</span>
+                        <span>{cottage?.localisation}</span>
                     </div>
                     <div className="description">
                         <p>
@@ -83,22 +102,6 @@ const Cottage = () => {
                     </div>
                 </div>
             </div>
-            {/* <Carousel
-                    showThumbs={false}
-                    showIndicators={false}
-                    showStatus={false}
-                    swipeable
-                    emulateTouch
-                >
-                    {carousel && carousel.map((image, key) => {
-                        console.log(image);
-                        return (
-                            <div key={image.id + key}>
-                                <img src={BASE_URL + image?.attributes.url} alt={image?.attributes.name} width="100%"/>
-                            </div>
-                        )
-                    })}
-            </Carousel> */}
         </>
     )
 }
