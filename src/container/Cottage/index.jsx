@@ -5,7 +5,12 @@ import { BASE_URL } from "../../config/constant";
 import './Style.scss';
 
 import { Swiper, SwiperSlide } from 'swiper/react';
-import 'swiper/css';
+import { Lazy, Pagination, Navigation } from "swiper";
+// Import Swiper styles
+import "swiper/css";
+import "swiper/css/lazy";
+import "swiper/css/pagination";
+import "swiper/css/navigation";
 
 const Cottage = () => {
     const [cottage, setCottage] = useState({});
@@ -29,8 +34,12 @@ const Cottage = () => {
                 </button>
                 <Swiper
                     lazy={true}
-                    onSlideChange={() => console.log('slide change')}
-                    onSwiper={(swiper) => console.log(swiper)}
+                    navigation={true}
+                    modules={[Lazy, Pagination, Navigation]}
+                    style={{
+                        "--swiper-navigation-color": "#fff",
+                        "--swiper-pagination-color": "#fff",
+                      }}
                 >
                     <SwiperSlide
                         slot="container-start"
