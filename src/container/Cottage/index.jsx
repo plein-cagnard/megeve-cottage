@@ -27,26 +27,28 @@ const Cottage = () => {
                 <button className="back-button">
                     <p>Retour</p>
                 </button>
-                <Swiper
-                    lazy={true}
-                    onSlideChange={() => console.log('slide change')}
-                    onSwiper={(swiper) => console.log(swiper)}
-                >
-                    <SwiperSlide
-                        slot="container-start"
+                {carousel.length > 0 && (
+                    <Swiper
+                        lazy={true}
+                        onSlideChange={() => console.log('slide change')}
+                        onSwiper={(swiper) => console.log(swiper)}
                     >
-                        <img src={BASE_URL + cottage.cover?.data?.attributes?.url} alt={cottage?.title } className="swiper-lazy"/>
-                    </SwiperSlide>
-                    {carousel && carousel.map((image, key) => {
-                        console.log(image);
-                        return (
-                            <SwiperSlide>
+                        <SwiperSlide
+                            slot="container-start"
+                        >
+                            <img src={BASE_URL + cottage.cover?.data?.attributes?.url} alt={cottage?.title } className="swiper-lazy"/>
+                        </SwiperSlide>
+                        {carousel && carousel.map((image, key) => {
+                            console.log(image);
+                            return (
+                                <SwiperSlide>
 
-                                <img key={image.id + key} src={BASE_URL + image?.attributes.url} alt={image?.attributes.name} className="swiper-lazy"/>
-                            </SwiperSlide>
-                        )
-                    })}
-                </Swiper>
+                                    <img key={image.id + key} src={BASE_URL + image?.attributes.url} alt={image?.attributes.name} className="swiper-lazy"/>
+                                </SwiperSlide>
+                            )
+                        })}
+                    </Swiper>
+                )}
             </div>
             <div className="container">
                 <div className="content">
