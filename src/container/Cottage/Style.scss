@@ -1,5 +1,10 @@
 @import "../../styles/assets/variables";
 
+.top {
+    display: flex;
+    justify-content: space-between;
+}
+
 .cover-image {
     height: 40vh;
     img {

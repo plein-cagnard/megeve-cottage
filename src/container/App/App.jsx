@@ -1,14 +1,10 @@
 import "./App.scss";
 import "../../styles/index.scss";
-import { Routes, Route, Link } from "react-router-dom";
-import { getEntities } from "../../helpers/entity";
-import Navbar from "../Navbar/Navbar";
+import { Routes, Route } from "react-router-dom";
 import Cottage from "../Cottage";
 import Home from "./Home";
 
 function App() {
-
-  getEntities('chalets?populate=*');
 
   return (
     <div className="App">
