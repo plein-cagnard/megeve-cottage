@@ -100,19 +100,19 @@ const Cottage = () => {
                     <div className="categories">
                         {infoCategory === 0 && (
                             <div className="info">
-                                test info
+                                {cottage?.informations}
                             </div>
                         )}
 
                         {infoCategory === 1 && (
                             <div className="services">
-                                test services
+                                {cottage?.services}
                             </div>
                         )}
 
                         {infoCategory === 2 && (
                             <div className="nearby">
-                                test nearby
+                                {cottage?.nearby}
                             </div>
                         )}
                     </div>
