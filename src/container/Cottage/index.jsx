@@ -2,6 +2,8 @@ import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { getEntity } from "../../helpers/entity";
 import { BASE_URL } from "../../config/constant";
+import { useNavigate } from 'react-router-dom';
+
 import './Style.scss';
 
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -16,6 +18,7 @@ const Cottage = () => {
     const [cottage, setCottage] = useState({});
     const [carousel, setCarousel] = useState([]);
     const [infoCategory, setInfoCategory] = useState(0);
+    const navigate = useNavigate();
     let params = useParams();
 
     useEffect(() => {
@@ -25,11 +28,10 @@ const Cottage = () => {
         });
     }, [])
     
-    // console.log(cottage);
     return (
         <>
             <div className="cover-image">
-                <button className="back-button">
+                <button className="back-button" onClick={() => { navigate('/') }}>
                     <p>Retour</p>
                 </button>
                 <Swiper
@@ -47,7 +49,6 @@ const Cottage = () => {
                         <img src={BASE_URL + cottage.cover?.data?.attributes?.url} alt={cottage?.title } className="swiper-lazy"/>
                     </SwiperSlide>
                     {carousel && carousel.map((image, key) => {
-                        console.log(image);
                         return (
                             <SwiperSlide>
 
