@@ -21,6 +21,10 @@ const Home = () => {
       <header className="App-header">
         <div className='Hero'>
           <h1>Trouvez votre prochaine maison de vacances</h1>
+          <video>
+            <source src="montain.mp4" type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
         </div>
       </header>
       <div>
@@ -29,15 +33,15 @@ const Home = () => {
           cottage = cottage.attributes;
           return (
             <div key={cottage.id + key} className="cottage-overview">
-              <Link to={`/chalet/${id}`}>
+              <Link to={`/chalet/${id}`} className={!key % 2 ? 'flex' : 'flex reverse'}>
                 <div className='cover'>
                   <img className='cover-img' src={BASE_URL + cottage.cover.data.attributes.url} alt={cottage.title }/>
                   <span className='cover-title'>
                     {cottage.title}
                   </span>
                 </div>
-                <div className='info'>
-                  
+                <div className={!key % 2 ? 'info right' : 'info'}>
+                  Test { cottage.informations}
                 </div>
               </Link>
             </div>
