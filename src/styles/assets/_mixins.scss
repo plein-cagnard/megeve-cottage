@@ -13,3 +13,8 @@
 h1, .asH1 {
   @include h1();
 }
+
+a {
+  color: inherit;
+  text-decoration: inherit;
+}

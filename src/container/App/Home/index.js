@@ -14,8 +14,6 @@ const Home = () => {
     });
   }, []);
 
-  console.log(cottages);
-
   return (
     <>
       <header className="App-header">
@@ -32,8 +30,8 @@ const Home = () => {
           const id = cottage.id
           cottage = cottage.attributes;
           return (
-            <div key={cottage.id + key} className="cottage-overview">
-              <Link to={`/chalet/${id}`} className={!key % 2 ? 'flex' : 'flex reverse'}>
+            <div key={id + key} className="cottage-overview">
+              <Link to={`/chalet/${id}`} className={!key % 2 ? 'link-container' : 'link-container reverse'}>
                 <div className='cover'>
                   <img className='cover-img' src={BASE_URL + cottage.cover.data.attributes.url} alt={cottage.title }/>
                   <span className='cover-title'>
@@ -41,7 +39,7 @@ const Home = () => {
                   </span>
                 </div>
                 <div className={!key % 2 ? 'info right' : 'info'}>
-                  Test { cottage.informations}
+                  <h3 className='title'>{ cottage.informations}</h3>
                 </div>
               </Link>
             </div>
