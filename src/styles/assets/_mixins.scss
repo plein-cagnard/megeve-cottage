@@ -8,6 +8,7 @@
 
 @mixin h1 {
   @include font-primary();
+  margin: 0;
 }
 
 h1, .asH1 {

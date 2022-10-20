@@ -26,6 +26,9 @@ const Home = () => {
         </div>
       </header>
       <div>
+        <div className='cottage-section-title'>
+          <h2> Nos Chalets Disponible </h2>
+        </div>
         {cottages.length > 0 && cottages.map((cottage, key) => {
           const id = cottage.id
           cottage = cottage.attributes;
@@ -34,12 +37,12 @@ const Home = () => {
               <Link to={`/chalet/${id}`} className={!key % 2 ? 'link-container' : 'link-container reverse'}>
                 <div className='cover'>
                   <img className='cover-img' src={BASE_URL + cottage.cover.data.attributes.url} alt={cottage.title }/>
-                  <span className='cover-title'>
-                    {cottage.title}
-                  </span>
                 </div>
                 <div className={!key % 2 ? 'info right' : 'info'}>
-                  <h3 className='title'>{ cottage.informations}</h3>
+                  <h3 className='title'>{ cottage.title}</h3>
+                  <div className='description'>
+                    {cottage.description}
+                  </div>
                 </div>
               </Link>
             </div>
