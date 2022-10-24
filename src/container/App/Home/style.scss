@@ -2,12 +2,12 @@
 
 .App-header {
     .Hero {
-        height: 30vh;
+        height: 100vh;
         background-color: #013125;
         color: white;
 
         @media (min-width: 900px) {
-            height: 45vh;
+            height: 80vh;
         }
     }
 }

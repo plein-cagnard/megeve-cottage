@@ -21,6 +21,8 @@ $line-height--h1: 1px;
 
 $color--primary: #013125;
 $color--secondary: #45361E;
+$color--light: #f8f8f8;
+$color--dark: #0f0f0f;
 
 $color--text: #1E261F;
 $color--text-secondary: #5f6569;
@@ -47,3 +49,6 @@ $border--radius: 8px;
 //--------------------------------------------------------------------------------------------------------------------//
 
 $box--shadow: #ffffff;
+$image-brightness-0: brightness(25%);
+$image-brightness-1: brightness(50%);
+$image-brightness-2: brightness(75%);
