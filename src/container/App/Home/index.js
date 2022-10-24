@@ -3,6 +3,9 @@ import { getEntities } from '../../../helpers/entity';
 import { BASE_URL } from "../../../config/constant";
 import { Link } from "react-router-dom";
 
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Lazy, Autoplay } from "swiper";
+
 import './style.scss';
 
 const Home = () => {
@@ -18,14 +21,26 @@ const Home = () => {
     <>
       <header className="App-header">
         <div className='Hero'>
-          <h1>Trouvez votre prochaine maison de vacances</h1>
-          <video>
-            <source src="montain.mp4" type="video/mp4" />
-            Your browser does not support the video tag.
-          </video>
+          <Swiper
+            lazy={true}
+            spaceBetween={30}
+            autoplay={{
+              delay: 3000,
+              disableOnInteraction: false,
+            }}
+            modules={[Lazy, Autoplay]}
+          >
+            {cottages && cottages.map((cottage, key) => {
+              return (
+                <SwiperSlide key={cottage.id + key}>
+                  <img key={cottage.id + key} src={BASE_URL + cottage?.attributes?.cover?.data?.attributes?.url} alt={cottage?.attributes?.cover?.data?.attributes?.name} className="swiper-lazy"/>
+                </SwiperSlide>
+              )
+            })}
+          </Swiper>
         </div>
       </header>
-      <div>
+      <div className='cottage-card'>
         <div className='cottage-section-title'>
           <h2> Nos Chalets Disponible </h2>
         </div>

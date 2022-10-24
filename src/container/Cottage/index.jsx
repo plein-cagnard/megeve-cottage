@@ -50,8 +50,7 @@ const Cottage = () => {
                     </SwiperSlide>
                     {carousel && carousel.map((image, key) => {
                         return (
-                            <SwiperSlide>
-
+                            <SwiperSlide key={key}>
                                 <img key={image.id + key} src={BASE_URL + image?.attributes.url} alt={image?.attributes.name} className="swiper-lazy"/>
                             </SwiperSlide>
                         )
@@ -65,12 +64,17 @@ const Cottage = () => {
                             <h1>{cottage?.title}</h1>
                             <span>{cottage?.localisation}</span>
                         </div>
-                        {cottage.price && 
+                        {cottage.price ? ( 
                             <div className="titles">
                                 <h1>{cottage?.price}€</h1>
                                 <span>per week</span>
                             </div>
-                        }
+                        ) : (
+                            <div className="titles">
+                                <h1></h1>
+                                <span>Prix sur demande</span>
+                            </div>
+                        )}
                     </div>
                     <div className="description">
                         <p>
