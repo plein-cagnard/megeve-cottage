@@ -6,29 +6,32 @@ import { BASE_URL } from "../../config/constant";
 import './Style.scss';
 
 const Hero = ({scrollDown}) => {
-  const [cottages, setCottages] = useState([]);
+  const [hero, setHero] = useState([]);
 
   useEffect(() => {
-    getEntities('chalets?populate=*').then((res) => {
-      setCottages(res.data)
+    getEntities('hero?populate=*').then((res) => {
+      setHero(res.data.attributes)
     });
   }, []);
 
   return (
     <header className="Hero">
-        <img className='background-image' src={BASE_URL + '/uploads/Chalet_OA_3_908c02ac86.jpg'} alt="Mountain cottage" />
+        <img className='background-image' src={BASE_URL + hero.background_image?.data?.attributes?.url} alt="Mountain cottage" />
         <div className="logo">
             <h2>Megève Cottage</h2>
         </div>
         <div className='content'>
-            <h1 className='title'>Test Title Cottages</h1>
-            <span className='subtitle'>Test SubTitle Cottages</span>
+            <h1 className='title'>{hero.title}</h1>
+            <h2 className='subtitle'>{hero.subtitle}</h2>
 
         </div>
         <div className='scroll-down'>
             <button className='button' onClick={scrollDown}>
                 <span className="icon material-icons">expand_more</span>
-            </button>
+            </button><br />
+            {hero.scroll_down && (
+              <span>{hero.scroll_down}</span>
+            )}
         </div>
     </header>
   )

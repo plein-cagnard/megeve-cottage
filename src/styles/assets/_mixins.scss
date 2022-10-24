@@ -9,13 +9,22 @@
 @mixin h1 {
   @include font-primary();
   margin: 0;
-  margin-bottom: 12px;
+  margin-bottom: 20px;
+
+  @media (min-width: 1024px) {
+    font-size: 3em;
+  }
 }
 
 @mixin h2 {
   @include font-primary();
   margin: 0;
   margin-bottom: 15px;
+
+
+  @media (min-width: 1024px) {
+    font-size: 2em;
+  }
 }
 
 h1, .asH1 {

@@ -43,7 +43,7 @@ const Home = () => {
                 <div className={key % 2 === 0 ? 'info right' : 'info'}>
                   <h3 className='title'>{ cottage.title}</h3>
                   <div className='description'>
-                    {cottage.description_mobile}
+                    {cottage.short_description}
                   </div>
                 </div>
               </Link>

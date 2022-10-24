@@ -24,6 +24,7 @@
         transform: translate(-50%, -50%);
         top: 50%;
         left: 50%;
+        width: 80%;
 
         .title {
             opacity: 0;
@@ -34,6 +35,10 @@
             opacity: 0;
             animation: 1500ms ease-out 1200ms forwards pop;
         }
+
+        @media (min-width: 1024px) {
+            width: 50%;
+        }
     }
 
     .scroll-down {
@@ -41,11 +46,13 @@
         transform: translate(-50%, -50%);
         bottom: 5%;
         left: 50%;
+        text-align: center;
 
         .button {
             background-color: transparent;
             border: none;
             color: $color--light;
+
 
             .icon {
                 font-size: 48px;
