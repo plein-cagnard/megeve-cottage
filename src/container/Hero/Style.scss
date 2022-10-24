@@ -13,6 +13,12 @@
         filter: $image-brightness-1;
     }
 
+    .logo {
+        position: absolute;
+        top: 2%;
+        left: 4%;
+    }
+
     .content {
         position: absolute;
         transform: translate(-50%, -50%);
