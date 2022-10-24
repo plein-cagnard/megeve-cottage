@@ -27,12 +27,27 @@
   }
 }
 
+@mixin h3 {
+  @include font-primary();
+  margin: 0;
+  margin-bottom: 10px;
+
+
+  @media (min-width: 1024px) {
+    font-size: 1.5em;
+  }
+}
+
 h1, .asH1 {
   @include h1();
 }
 
 h2, .asH2 {
   @include h2();
+}
+
+h3, .asH3 {
+  @include h3();
 }
 
 a {

@@ -15,8 +15,18 @@
 
     .logo {
         position: absolute;
-        top: 1%;
-        left: 3%;
+        top: 2%;
+        left: 2%;
+
+        h3 {
+            font-weight: bolder;
+        }
+    }
+
+    .localisation {
+        position: absolute;
+        top: 2%;
+        right: 2%;
     }
 
     .content {
@@ -50,28 +60,32 @@
         animation: 3000ms 2200ms forwards pop;
         opacity: 0;
 
-        .button {
-            background-color: transparent;
-            border: none;
-            color: $color--light;
-
-
-            .icon {
-                font-size: 48px;
-                margin: auto;
-                animation: 2500ms ease-in-out 5200ms alternate-reverse infinite blink;
-            }
+        .icon {
+            font-size: 48px;
+            margin: auto;
+            animation: 2500ms ease-in-out 2200ms alternate-reverse infinite blink;
         }
     }
+        
+        
+    .button {
+        background-color: transparent;
+        border: none;
+        color: $color--light;
+        
+    }
+
 }
 
 @keyframes blink {
     0% {
         opacity: 0.3;
+        padding-top: 50px;
     }
     
     100% {
         opacity: 1;
+        padding-top: 0px;
     }
 }
 
