@@ -18,7 +18,7 @@ const Hero = ({scrollDown}) => {
     <header className="Hero">
         <img className='background-image' src={BASE_URL + hero.background_image?.data?.attributes?.url} alt="Mountain cottage" />
         <div className="logo">
-            <h2>Megève Cottage</h2>
+            <h3>Megève Cottage</h3>
         </div>
         <div className='content'>
             <h1 className='title'>{hero.title}</h1>

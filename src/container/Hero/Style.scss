@@ -15,8 +15,8 @@
 
     .logo {
         position: absolute;
-        top: 2%;
-        left: 4%;
+        top: 1%;
+        left: 3%;
     }
 
     .content {
@@ -47,6 +47,8 @@
         bottom: 5%;
         left: 50%;
         text-align: center;
+        animation: 3000ms 2200ms forwards pop;
+        opacity: 0;
 
         .button {
             background-color: transparent;
@@ -57,8 +59,7 @@
             .icon {
                 font-size: 48px;
                 margin: auto;
-                opacity: 0;
-                animation: 3000ms ease-in-out 2200ms alternate infinite blink;
+                animation: 2500ms ease-in-out 5200ms alternate-reverse infinite blink;
             }
         }
     }
@@ -66,15 +67,11 @@
 
 @keyframes blink {
     0% {
-        opacity: 0;
-    }
-    
-    50% {
-        opacity: 1;
+        opacity: 0.3;
     }
     
     100% {
-        opacity: 0.5;
+        opacity: 1;
     }
 }
 
