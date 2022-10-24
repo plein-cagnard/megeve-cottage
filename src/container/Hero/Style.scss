@@ -51,13 +51,9 @@
                 font-size: 48px;
                 margin: auto;
                 opacity: 0;
-                animation: 3000ms ease-in-out 1200ms alternate infinite blink;
+                animation: 3000ms ease-in-out 2200ms alternate infinite blink;
             }
         }
-    }
-
-    @media (min-width: 900px) {
-        height: 80vh;
     }
 }
 
