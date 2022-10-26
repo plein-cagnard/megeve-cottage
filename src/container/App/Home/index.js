@@ -55,7 +55,7 @@ const Home = () => {
             <div key={id + key} className="cottage-overview">
               <Link to={`/chalet/${id}?lang=${localisation}`} className={key % 2 === 0 ? 'link-container' : 'link-container reverse'}>
                 <div className='cover'>
-                  <img className='cover-img' src={BASE_URL + cottage.cover.data.attributes.url} alt={cottage.title }/>
+                  <img className='cover-img' src={BASE_URL + cottage.cover.data.attributes.url} alt={cottage.cover.data.attributes.name }/>
                 </div>
                 <div className={key % 2 === 0 ? 'info right' : 'info'}>
                   <h3 className='title'>{ cottage.title}</h3>
