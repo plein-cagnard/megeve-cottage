@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { getEntity } from "../../helpers/entity";
 import { BASE_URL } from "../../config/constant";
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useSearchParams } from 'react-router-dom';
 
 import './Style.scss';
 
@@ -15,9 +15,12 @@ import "swiper/css/pagination";
 import "swiper/css/navigation";
 
 const Cottage = () => {
+    const [localisation, setLocalisation] = useState();
     const [cottage, setCottage] = useState({});
     const [carousel, setCarousel] = useState([]);
     const [infoCategory, setInfoCategory] = useState(0);
+    const [searchParams, setSearchParams] = useSearchParams();
+
     const navigate = useNavigate();
     let params = useParams();
 
@@ -26,12 +29,14 @@ const Cottage = () => {
             setCottage(res.data.attributes);
             setCarousel(res.data.attributes.carousel.data);
         });
+
+        setLocalisation(searchParams.get('lang'))
     }, [])
     
     return (
         <>
             <div className="cover-image">
-                <button className="back-button" onClick={() => { navigate('/') }}>
+                <button className="back-button" onClick={() => { navigate(`/?lang=${localisation}`) }}>
                     <p>Retour</p>
                 </button>
                 <Swiper
