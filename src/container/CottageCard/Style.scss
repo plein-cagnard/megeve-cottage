@@ -1,0 +1,26 @@
+@import '../../styles/assets/variables';
+
+.Cottage {
+    height: 100%;
+    position: relative;
+    
+    .cover {
+        width: 100%;
+        height: 100%;
+        filter: $image-brightness-1;
+        position: absolute;
+
+        object-fit: cover;
+    }
+
+    .content {
+        position: absolute;
+        color: $color--light;
+
+        bottom: 0;
+        right: 0;
+        padding: 0px 20px;
+
+        z-index: 1;
+    }
+}
