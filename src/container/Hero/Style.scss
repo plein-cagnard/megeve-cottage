@@ -37,11 +37,14 @@
         width: 80%;
 
         .title {
+            text-transform: uppercase;
             opacity: 0;
             animation: 1500ms ease-out 1000ms forwards pop;
         }
 
         .subtitle {
+            text-transform: uppercase;
+            font-weight: lighter;
             opacity: 0;
             animation: 1500ms ease-out 1200ms forwards pop;
         }
