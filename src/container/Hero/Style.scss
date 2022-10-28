@@ -13,22 +13,6 @@
         filter: $image-brightness-1;
     }
 
-    .logo {
-        position: absolute;
-        top: 2%;
-        left: 2%;
-
-        h3 {
-            font-weight: bolder;
-        }
-    }
-
-    .localisation {
-        position: absolute;
-        top: 2%;
-        right: 2%;
-    }
-
     .content {
         position: absolute;
         transform: translate(-50%, -50%);
