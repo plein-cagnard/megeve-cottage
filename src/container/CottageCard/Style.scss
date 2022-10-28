@@ -11,16 +11,71 @@
         position: absolute;
 
         object-fit: cover;
+
+        z-index: 0;
     }
 
     .content {
         position: absolute;
         color: $color--light;
+        width: 100%;
 
-        bottom: 0;
-        right: 0;
-        padding: 0px 20px;
+        top: 50%;
+        transform: translateY(-50%);
+        text-align: center;
+        letter-spacing: 2px;
+
+        .title {
+            margin: 0;
+            font-weight: lighter;
+        }
+        .cottage-name {
+            text-transform: uppercase;
+            font-weight: bolder;
+        }
+        
+        z-index: 1;
+    }
+    .cta {
+        position: absolute;
+        bottom: 25%;
+        right: 50%;
+        transform: translate(50%, 50%);
+        
+        color: $color--light;
+        text-align: center;
+        
+        
+        .button {
+            opacity: 0;
+            animation: 800ms ease-out 200ms forwards pop;
+            
+            transition: color .2s ease-in;
+        }
+        :hover, :active {
+            color: #f8f8f87f;
+        }
 
         z-index: 1;
+    }
+    .arrow {
+        bottom: 15%;
+
+        
+        .icon {
+            opacity: 0;
+            animation: 800ms ease-out 200ms forwards pop;
+            font-size: 32px;
+        }
+    }
+}
+
+@keyframes pop {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
     }
 }
