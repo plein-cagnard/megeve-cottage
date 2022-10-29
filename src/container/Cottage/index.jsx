@@ -66,7 +66,7 @@ const Cottage = () => {
                 <div className="content">
                     <div className="top">
                         <div className="title">
-                            <h1>{cottage?.title}</h1>
+                            <h1>Chalet {cottage?.title}</h1>
                             <span>{cottage?.localisation}</span>
                         </div>
                         {cottage.price ? ( 

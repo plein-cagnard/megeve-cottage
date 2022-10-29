@@ -2,7 +2,9 @@ import React, { useEffect, useState, useRef } from 'react';
 import { getEntities } from '../../../helpers/entity';
 import { BASE_URL } from "../../../config/constant";
 import { Link, useSearchParams } from "react-router-dom";
+import Navbar from '../../Navbar/Navbar';
 import Hero from '../../Hero/Hero';
+import CottageCard from '../../CottageCard';
 
 import './style.scss';
 
@@ -10,11 +12,19 @@ const Home = () => {
   const [cottages, setCottages] = useState([]);
   const [localisation, setLocalisation] = useState();
   const [searchParams, setSearchParams] = useSearchParams();
-  const ref = useRef(null);
+  const cottagesRef = useRef(null);
+
+  const handleReturnTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth',
+    });
+  };
 
   const handleSCrollDown = () => {
-    ref.current?.scrollIntoView({behavior: 'smooth'});
+    cottagesRef.current?.scrollIntoView({behavior: 'smooth'});
   };
+
 
   const handleSetLangage = () => {
     const localisation = searchParams.get('lang') === 'fr' ? 'fr' : 'en';
@@ -29,7 +39,6 @@ const Home = () => {
   };
 
   useEffect(() => {
-    console.log('re render cottages');
     getEntities('chalets', '&populate=*', searchParams.get('lang') ).then((res) => {
       setCottages(res.data)
     });
@@ -42,12 +51,26 @@ const Home = () => {
 
   return (
     <>
-      <Hero scrollDown={handleSCrollDown} localisation={searchParams.get('lang')} switchLang={handleSwitchLangage}/>
-      <div className='cottage-card' ref={ref}>
-        <div className='cottage-section-title'>
+      <Navbar localisation={searchParams.get('lang')} switchLang={handleSwitchLangage} returnTop={handleReturnTop} />
+      <Hero scrollDown={handleSCrollDown} localisation={searchParams.get('lang')}/>
+      <div className='card-cottages' ref={cottagesRef}>
+        {/* <div className='cottage-section-title'>
           <h2> Nos Chalets Disponible </h2>
-        </div>
+        </div> */}
+
         {cottages.length > 0 && cottages.map((cottage, key) => {
+        const id = cottage.id
+        cottage = cottage.attributes;
+        
+          return (
+            <div key={key + id} className='cottage-overview'>
+              <CottageCard cottage={cottage} id={id} />
+            </div>
+          )
+        })}
+
+
+        {/* {cottages.length > 0 && cottages.map((cottage, key) => {
           const id = cottage.id
           cottage = cottage.attributes;
 
@@ -66,7 +89,7 @@ const Home = () => {
               </Link>
             </div>
           )
-        })}
+        })} */}
       </div>
     </>
   )

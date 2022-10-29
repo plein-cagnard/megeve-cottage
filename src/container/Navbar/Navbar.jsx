@@ -1,27 +1,24 @@
-import React, {useEffect, useState} from "react";
-import {getSingle} from "../../helpers/entity";
-import { Link } from "react-router-dom";
+import React from "react";
+
 import './Navbar.scss';
 
-const Navbar = () => {
-  const [navbarData, setNavbarData] = useState({});
-
-  useEffect(() => {
-    getSingle('navbar?populate=*').then(({ data }) => {
-      setNavbarData(data)
-    })
-  }, [])
+const Navbar = ({localisation, switchLang, returnTop}) => {
 
   return (
-    <ul>
-      { navbarData.attributes && navbarData.attributes.fields.map((field) => {
-        return (
-          <li key={field.id}>
-            <Link to={field.link}>{field.text}</Link>
-          </li>
-        )
-      })}
-    </ul>
+    <>
+      <nav>
+        <div className="left wrapper">
+        </div>
+        <div className="middle wrapper" onClick={returnTop}>
+          <h3 className="title">Megève Cottage</h3>
+        </div>
+        <div className="right wrapper">
+          <button className='button' onClick={switchLang}>
+            <h2>{localisation === 'fr' ? '🇫🇷' : '🇬🇧'}</h2>
+          </button>
+        </div>
+      </nav>
+    </>
   )
 }
 
