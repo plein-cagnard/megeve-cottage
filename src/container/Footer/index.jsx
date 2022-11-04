@@ -19,17 +19,20 @@ const Footer = ({ localisation }) => {
 
     return (
         <footer className="footer">
-            {footer?.phone && (
-                <button className='button'>
-                    <span className="icon material-icons">phone</span>
-                    <span className="phone">{footer?.phone}</span>
-                </button>
+            {footer?.email && (
+                <a href={`mailto:${footer?.email}`} className='section email'>
+                    <span className="icon material-icons">mail</span>
+                    <span className="phone">{footer?.email}</span>
+                </a>
             )}
             {footer?.legal && (
-                <div className="legal">{footer?.legal}</div>
+                <div className="section legal">{footer?.legal}</div>
             )}
-            {footer?.email && (
-                <div className="email">{footer?.email}</div>
+            {footer?.phone && (
+                <a href={`tel:${footer?.phone}`} className='section phone'>
+                    <span className="icon material-icons">phone</span>
+                    <span className="phone">{footer?.phone}</span>
+                </a>
             )}
         </footer>
     )

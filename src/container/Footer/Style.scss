@@ -6,16 +6,23 @@
     flex-wrap: wrap;
 
     background-color: $color--dark;
+    padding: 20px;
 
     position: relative;
     text-align: center;
     
-    div {
+    .section {
         color: $color--light;
-        min-width: 25%;
-        padding: 15px;
+        min-width: 20%;
+        padding: 10px;
 
         z-index: 1;
+
+        span {
+            display: inline-block;
+            vertical-align: middle;
+            margin: 0 5px;
+        }
     }
 
     .button {
