@@ -1,0 +1,30 @@
+@import '../../styles/assets/variables';
+
+.footer {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+
+    background-color: $color--dark;
+
+    position: relative;
+    text-align: center;
+    
+    div {
+        color: $color--light;
+        min-width: 25%;
+        padding: 15px;
+
+        z-index: 1;
+    }
+
+    .button {
+        background-color: transparent;
+        border: none;
+        color: $color--light;
+
+        .icon {
+            font-size: 24px;
+        }
+    }
+}

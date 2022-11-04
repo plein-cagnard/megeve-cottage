@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useRef, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { useNavigate, useSearchParams } from "react-router-dom";
 import { useInViewport } from 'react-in-viewport';
 import { BASE_URL } from "../../config/constant";
