@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, {useEffect, useLayoutEffect, useState} from "react";
 import { useParams } from "react-router-dom";
 import { getEntity } from "../../helpers/entity";
 import { BASE_URL } from "../../config/constant";
@@ -20,6 +20,20 @@ const Cottage = () => {
     const [carousel, setCarousel] = useState([]);
     const [infoCategory, setInfoCategory] = useState(0);
     const [searchParams, setSearchParams] = useSearchParams();
+    const [orientation, setOrientation] = useState(!navigator.maxTouchPoints ? 'desktop' : !window.screen.orientation.angle ? 'portrait' : 'landscape')
+
+    useEffect(() => {
+        console.log(orientation);
+    }, [orientation])
+
+    useLayoutEffect(() => {
+        function updateOrientation() {
+            setOrientation(!navigator.maxTouchPoints ? 'desktop' : !window.screen.orientation.angle ? 'portrait' : 'landscape')
+        }
+        window.addEventListener('resize', updateOrientation);
+        updateOrientation();
+        return () => window.removeEventListener('resize', updateOrientation);
+    }, []);
 
     const navigate = useNavigate();
     let params = useParams();
@@ -32,10 +46,10 @@ const Cottage = () => {
 
         setLocalisation(searchParams.get('lang'))
     }, [])
-    
+
     return (
         <>
-            <div className="cover-image">
+            <div className={orientation === 'landscape' ? 'cover-image landscape' : 'cover-image'}>
                 <button className="back-button" onClick={() => { navigate(`/?lang=${localisation}`) }}>
                     <p>Retour</p>
                 </button>
@@ -56,6 +70,7 @@ const Cottage = () => {
                     {carousel && carousel.map((image, key) => {
                         return (
                             <SwiperSlide key={key}>
+                                {/* eslint-disable-next-line jsx-a11y/img-redundant-alt */}
                                 <img key={image.id + key} src={BASE_URL + image?.attributes.url} alt={image?.attributes.name} className="swiper-lazy"/>
                             </SwiperSlide>
                         )
@@ -69,7 +84,7 @@ const Cottage = () => {
                             <h1>Chalet {cottage?.title}</h1>
                             <span>{cottage?.localisation}</span>
                         </div>
-                        {cottage.price ? ( 
+                        {cottage.price ? (
                             <div className="titles">
                                 <h1>{cottage?.price}€</h1>
                                 <span>per week</span>
@@ -90,19 +105,19 @@ const Cottage = () => {
 
                 <div className="categories-info">
                     <div className="buttons">
-                        <button 
+                        <button
                             className={infoCategory === 0 ? "selected" : ""}
                             onClick={() => {setInfoCategory(0)}}
                         >
                             Informations
                         </button>
-                        <button 
+                        <button
                             className={infoCategory === 1 ? "selected" : ""}
                             onClick={() => {setInfoCategory(1)}}
                         >
                             Services
                         </button>
-                        <button 
+                        <button
                             className={infoCategory === 2 ? "selected" : ""}
                             onClick={() => {setInfoCategory(2)}}
                         >
