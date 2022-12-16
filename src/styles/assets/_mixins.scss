@@ -1,15 +1,18 @@
 @import 'variables';
 
 @mixin font-primary($weight: normal, $style: normal) {
-  font-family: $font--primary;
+  // font-family: $font--primary;
   font-weight: $weight;
   font-style: $style;
 }
 
 @mixin h1 {
-  @include font-primary();
+  @include font-primary(800, normal);
   margin: 0;
-  margin-bottom: 20px;
+  margin-bottom: 16px;
+  font-size: 32px;
+  line-height: 140%;
+  letter-spacing: 0.2px;
 
   @media (min-width: 1024px) {
     font-size: 3em;
@@ -28,10 +31,12 @@
 }
 
 @mixin h3 {
-  @include font-primary();
+  @include font-primary(500, normal);
   margin: 0;
   margin-bottom: 10px;
-
+  font-size: 19px;
+  line-height: 151%;
+  letter-spacing: 0.2px;
 
   @media (min-width: 1024px) {
     font-size: 1.5em;

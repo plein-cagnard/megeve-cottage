@@ -10,19 +10,21 @@ nav {
 
   color: $color--light;
   padding-top: 15px;
+  background-color: #b8b8b879;
 
   .wrapper {
     min-width: 50px;
-  }
-
-  h3.title {
-    font-weight: lighter;
+    margin: 0 20px;
   }
 
   .button {
     background-color: transparent;
     border: none;
     color: $color--light;  
+  }
+
+  .bold {
+    font-weight: bold;
   }
 
   z-index: 1;

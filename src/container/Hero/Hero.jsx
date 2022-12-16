@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react';
 import { getSingle } from '../../helpers/entity';
 
 import { BASE_URL } from "../../config/constant";
+import Skeleton from 'react-loading-skeleton'
+import 'react-loading-skeleton/dist/skeleton.css'
 
 import './Style.scss';
 
@@ -19,8 +21,8 @@ const Hero = ({scrollDown, localisation}) => {
       <img className='background-image' src={BASE_URL + hero.background_image?.data?.attributes?.url} alt="Mountain cottage" />
 
       <div className='content'>
-          <h1 className='title'>{hero.title}</h1>
-          <h2 className='subtitle'>{hero.subtitle}</h2>
+          <h1 className='title'>{hero.title || <Skeleton />}</h1>
+          <h3 className='subtitle'>{hero.subtitle || <Skeleton />}</h3>
       </div>
 
       <div className='scroll-down'>

@@ -18,7 +18,8 @@
         transform: translate(-50%, -50%);
         top: 50%;
         left: 50%;
-        width: 80%;
+        width: 70%;
+        text-align: center;
 
         .title {
             text-transform: uppercase;
@@ -27,8 +28,6 @@
         }
 
         .subtitle {
-            text-transform: uppercase;
-            font-weight: lighter;
             opacity: 0;
             animation: 1500ms ease-out 1200ms forwards pop;
         }
@@ -54,13 +53,12 @@
             animation: 2500ms ease-in-out 2200ms alternate-reverse infinite blink;
         }
     }
-        
-        
+
     .button {
         background-color: transparent;
         border: none;
         color: $color--light;
-        
+
     }
 
 }
@@ -70,10 +68,10 @@
         opacity: 0.3;
         padding-top: 50px;
     }
-    
+
     100% {
         opacity: 1;
-        padding-top: 0px;
+        padding-top: 0;
     }
 }
 
