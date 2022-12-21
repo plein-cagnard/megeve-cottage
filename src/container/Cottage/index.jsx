@@ -22,10 +22,6 @@ const Cottage = () => {
     const [searchParams, setSearchParams] = useSearchParams();
     const [orientation, setOrientation] = useState(!navigator.maxTouchPoints ? 'desktop' : !window.screen.orientation.angle ? 'portrait' : 'landscape')
 
-    useEffect(() => {
-        console.log(orientation);
-    }, [orientation])
-
     useLayoutEffect(() => {
         function updateOrientation() {
             setOrientation(!navigator.maxTouchPoints ? 'desktop' : !window.screen.orientation.angle ? 'portrait' : 'landscape')
@@ -49,7 +45,7 @@ const Cottage = () => {
 
     return (
         <>
-            <div className={orientation === 'landscape' ? 'cover-image landscape' : 'cover-image'}>
+            <div className={orientation === 'landscape' ? 'cover-image landscape' : 'cover-image'} >
                 <button className="back-button" onClick={() => { navigate(`/?lang=${localisation}`) }}>
                     <p>Retour</p>
                 </button>

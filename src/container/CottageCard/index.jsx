@@ -9,8 +9,8 @@ const CottageCard = ({cottage, id = null}) => {
   const myRef = useRef();
   const navigate = useNavigate();
   const [searchParams, setSearchParams] = useSearchParams();
-  const [lang, setLang] = useState();
-  const { inViewport } = useInViewport(myRef); 
+  const [lang, setLang] = useState('');
+  const { inViewport } = useInViewport(myRef);
 
   useEffect(() => {
     setLang(searchParams.get('lang'))
@@ -26,7 +26,7 @@ const CottageCard = ({cottage, id = null}) => {
       onClick={handleNavigation}
       className='Cottage'
     >
-        <img 
+        <img
           className='cover'
           src={ BASE_URL + cottage.cover.data.attributes.url }
           alt={ cottage.cover.data.attributes.name }
