@@ -13,10 +13,6 @@ import "swiper/css/navigation";
 
 const Carousel = ({cottage, carousel}) => {
 
-    useEffect(() => {
-        console.log(cottage)
-        console.log(carousel)
-    })
     return (
         <Swiper
         lazy={true}
@@ -35,7 +31,7 @@ const Carousel = ({cottage, carousel}) => {
         {carousel && carousel.map((image, key) => {
             return (
                 <>
-                {key === 3 ? 
+                {key === 3 ?
                     <SwiperSlide key={key} slot="wrapper-start">
                         <img key={image.id + key} src={BASE_URL + image?.attributes.url} alt={image?.attributes.name} className="swiper-lazy"/>
                     </SwiperSlide>

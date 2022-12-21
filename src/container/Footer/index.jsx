@@ -13,10 +13,6 @@ const Footer = ({ localisation }) => {
         });
       }, [localisation]);
 
-      useEffect(() => {
-        console.log(footer);
-      }, [footer]);
-
     return (
         <footer className="footer">
             {footer?.email && (
