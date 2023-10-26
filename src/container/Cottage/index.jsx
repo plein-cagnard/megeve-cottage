@@ -9,10 +9,10 @@ import './Style.scss';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Lazy, Pagination, Navigation } from "swiper";
 // Import Swiper styles
-import "swiper/css";
-import "swiper/css/lazy";
-import "swiper/css/pagination";
-import "swiper/css/navigation";
+// import "swiper/css";
+// import "swiper/css/lazy";
+// import "swiper/css/pagination";
+// import "swiper/css/navigation";
 
 const Cottage = () => {
     const [localisation, setLocalisation] = useState();
@@ -32,7 +32,7 @@ const Cottage = () => {
 
         setLocalisation(searchParams.get('lang'))
     }, [])
-    
+
     return (
         <>
             <div className="cover-image">
@@ -69,7 +69,7 @@ const Cottage = () => {
                             <h1>Chalet {cottage?.title}</h1>
                             <span>{cottage?.localisation}</span>
                         </div>
-                        {cottage.price ? ( 
+                        {cottage.price ? (
                             <div className="titles">
                                 <h1>{cottage?.price}€</h1>
                                 <span>per week</span>
@@ -90,19 +90,19 @@ const Cottage = () => {
 
                 <div className="categories-info">
                     <div className="buttons">
-                        <button 
+                        <button
                             className={infoCategory === 0 ? "selected" : ""}
                             onClick={() => {setInfoCategory(0)}}
                         >
                             Informations
                         </button>
-                        <button 
+                        <button
                             className={infoCategory === 1 ? "selected" : ""}
                             onClick={() => {setInfoCategory(1)}}
                         >
                             Services
                         </button>
-                        <button 
+                        <button
                             className={infoCategory === 2 ? "selected" : ""}
                             onClick={() => {setInfoCategory(2)}}
                         >
