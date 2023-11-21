@@ -71,8 +71,8 @@ const Cottage = () => {
                         </div>
                         {cottage.price ? (
                             <div className="titles">
-                                <h1>{cottage?.price}€</h1>
                                 <span>A partir de</span>
+                                <h1>{cottage?.price}€</h1>
                             </div>
                         ) : (
                             <div className="titles">
