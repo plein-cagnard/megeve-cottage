@@ -72,7 +72,7 @@ const Cottage = () => {
                         {cottage.price ? (
                             <div className="titles">
                                 <h1>{cottage?.price}€</h1>
-                                <span>per week</span>
+                                <span>A partir de</span>
                             </div>
                         ) : (
                             <div className="titles">
