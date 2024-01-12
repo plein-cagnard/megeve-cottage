@@ -22,8 +22,8 @@ nav {
   .button {
     background-color: transparent;
     border: none;
-    color: $color--light;  
+    color: $color--light;
   }
 
-  z-index: 1;
+  z-index: 99;
 }

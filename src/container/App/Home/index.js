@@ -27,7 +27,7 @@ const Home = () => {
 
 
   const handleSetLangage = () => {
-    const localisation = searchParams.get('lang') === 'fr' ? 'fr' : 'en';
+    const localisation = searchParams.get('lang') === 'en' ? 'en' : 'fr';
     setLocalisation(localisation);
     setSearchParams({lang: localisation});
   };
@@ -57,7 +57,7 @@ const Home = () => {
         {cottages.length > 0 && cottages.map((cottage, key) => {
         const id = cottage.id
         cottage = cottage.attributes;
-        
+
           return (
             <div key={key + id} className='cottage-overview'>
               <CottageCard cottage={cottage} id={id} />

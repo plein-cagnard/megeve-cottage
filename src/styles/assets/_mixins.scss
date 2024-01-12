@@ -7,12 +7,14 @@
 }
 
 @mixin h1 {
-  @include font-primary();
+  @include font-primary(800);
   margin: 0;
-  margin-bottom: 20px;
+  margin-bottom: 0.7rem;
+  text-transform: uppercase;
 
+  font-size: 2rem;
   @media (min-width: 1024px) {
-    font-size: 3em;
+    font-size: 3rem;
   }
 }
 
@@ -38,6 +40,16 @@
   }
 }
 
+@mixin p {
+  @include font-primary();
+  margin: 0;
+
+  font-size: 1rem;
+  @media (min-width: 1024px) {
+    font-size: 1.5em;
+  }
+}
+
 h1, .asH1 {
   @include h1();
 }
@@ -48,6 +60,10 @@ h2, .asH2 {
 
 h3, .asH3 {
   @include h3();
+}
+
+p, .asP {
+  @include p();
 }
 
 a {
