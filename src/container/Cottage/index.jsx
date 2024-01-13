@@ -82,7 +82,7 @@ const Cottage = () => {
                         <ul>
                             <li>{cottage.numerOfPersons} Persons</li>
                             <li>{cottage.surface} Mètre carré</li>
-                            <li>{cottage.rooms}</li>
+                            <li>{cottage.rooms} Bedroom</li>
                         </ul>
                         <p>
                             {cottage?.description}
